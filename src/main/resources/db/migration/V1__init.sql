@@ -1,0 +1,14 @@
+CREATE SCHEMA IF NOT EXISTS tenant_1;
+CREATE SCHEMA IF NOT EXISTS tenant_2;
+
+CREATE TABLE IF NOT EXISTS tenant_1.users (
+    id UUID PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS tenant_2.users (
+    id UUID PRIMARY KEY,
+    email VARCHAR(255) UNIQUE,
+    password VARCHAR(255)
+    );
