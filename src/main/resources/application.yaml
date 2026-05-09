@@ -10,6 +10,7 @@ spring:
       ddl-auto: validate
     properties:
       hibernate:
+        multi_tenant: SCHEMA
         format_sql: true
 
   flyway:
