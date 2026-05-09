@@ -2,6 +2,7 @@ package com.stm.smart_task_management.task;
 
 import com.stm.smart_task_management.task.dto.CreateTaskRequest;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,5 +21,11 @@ public class TaskController {
     @GetMapping
     public List<Task> getAll(){
         return taskService.getAll();
+    }
+
+    @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
+    public String AdminOnly(){
+        return "Admin endpoint";
     }
 }

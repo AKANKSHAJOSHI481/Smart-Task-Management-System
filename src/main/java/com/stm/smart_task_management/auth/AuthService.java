@@ -4,6 +4,8 @@ import com.stm.smart_task_management.auth.dto.AuthResponse;
 import com.stm.smart_task_management.auth.dto.LoginRequest;
 import com.stm.smart_task_management.auth.dto.RegisterRequest;
 import com.stm.smart_task_management.security.JwtService;
+import com.stm.smart_task_management.tenant.TenantContext;
+import com.stm.smart_task_management.user.Role;
 import com.stm.smart_task_management.user.User;
 import com.stm.smart_task_management.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,9 +24,11 @@ public class AuthService {
         user.setName(request.name());
         user.setEmail(request.email());
         user.setPassword(passwordEncoder.encode(request.password()));
-        user.setRole("USER");
+        user.setRole(Role.USER);
+        String tenant = TenantContext.getTenant();
+        user.setTenantId(tenant);
         userRepository.save(user);
-        String token = jwtService.generateToken(user.getEmail());
+        String token = jwtService.generateToken(user);
         return new AuthResponse(token);
     }
 
@@ -37,7 +41,7 @@ public class AuthService {
         if(!matches){
             throw new RuntimeException("Invalid password or email");
         }
-        String token =  jwtService.generateToken(user.getEmail());
+        String token =  jwtService.generateToken(user);
         return new AuthResponse(token);
     }
 }
