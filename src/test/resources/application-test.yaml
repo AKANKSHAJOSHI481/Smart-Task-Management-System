@@ -9,7 +9,12 @@ spring:
     enabled: true
     baseline-on-migrate: true
   session:
-    store-type: redis
+    store-type: none
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
+      - org.springframework.boot.autoconfigure.session.SessionAutoConfiguration
   ai:
     google:
       genai:
