@@ -30,7 +30,7 @@ public class TaskService {
         emailService.sendTaskCreatedEmail("joshiakanksha481@gmail.com");
         return taskRepository.save(task);
     }
-    @Cacheable(value = "tasks", key = "T(com.stm.smart_task_management.tenant.T enantContext).getTenant()")
+    @Cacheable(value = "tasks", key = "T(com.stm.smart_task_management.tenant.TenantContext).getTenant()")
     public List<Task> getAll(){
         System.out.println("FETCHING FROM DB");
         return taskRepository.findAll();

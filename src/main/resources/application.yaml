@@ -4,9 +4,9 @@ spring:
   application:
     name: smart-task-management
   datasource:
-    url : jdbc:postgresql://localhost:5432/smart_tasks
-    username : admin
-    password : admin
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/smart_tasks}
+    username: ${SPRING_DATASOURCE_USERNAME:admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:admin}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -14,15 +14,13 @@ spring:
       hibernate:
         multi_tenant: SCHEMA
         format_sql: true
-
   flyway:
     enabled: true
     baseline-on-migrate: true
-
   data:
     redis:
-      host: localhost
-      port: 6379
+      host: ${SPRING_DATA_REDIS_HOST:localhost}
+      port: ${SPRING_DATA_REDIS_PORT:6379}
   threads:
     virtual:
       enabled: true
