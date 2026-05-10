@@ -1,8 +1,4 @@
 spring:
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/test_db}
-    username: ${SPRING_DATASOURCE_USERNAME:admin}
-    password: ${SPRING_DATASOURCE_PASSWORD:admin}
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -10,8 +6,11 @@ spring:
       hibernate:
         format_sql: true
   flyway:
-    enabled: false
-  data:
-    redis:
-      host: ${SPRING_DATA_REDIS_HOST:localhost}
-      port: ${SPRING_DATA_REDIS_PORT:6379}
+    enabled: true
+    baseline-on-migrate: true
+  session:
+    store-type: none
+  ai:
+    google:
+      genai:
+        api-key: dummy-key
