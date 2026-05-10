@@ -23,10 +23,17 @@ public abstract class AbstractIntegrationTest {
                     .withUsername("admin")
                     .withPassword("admin");
 
+    @Container
+    static GenericContainer<?> redis =
+            new GenericContainer<>(DockerImageName.parse("redis:7"))
+                    .withExposedPorts(6379);
+
     @DynamicPropertySource
     static void configureProperties(DynamicPropertyRegistry registry){
         registry.add("spring.datasource.url", postgre::getJdbcUrl);
         registry.add("spring.datasource.username", postgre::getUsername);
         registry.add("spring.datasource.password", postgre::getPassword);
+        registry.add("spring.data.redis.host", redis::getHost);
+        registry.add("spring.data.redis.port", () -> redis.getMappedPort(6379));
     }
 }
