@@ -136,6 +136,17 @@ The application is deployed and available at:
 
 https://smart-task-management-system-production.up.railway.app
 
+## 📸 Screenshots
+
+### Swagger API Documentation
+![Swagger UI](https://via.placeholder.com/800x600?text=Swagger+Documentation+Screenshot)
+
+### Deployment Success
+![Deployment Success](https://via.placeholder.com/800x600?text=Deployment+Success+Screenshot)
+
+### CI/CD Build Success
+![CI Build Success](https://via.placeholder.com/800x600?text=CI+Build+Success+Screenshot)
+
 ## 🧪 Testing
 
 Run the full test suite including integration tests:
@@ -147,6 +158,10 @@ Run the full test suite including integration tests:
 Integration tests use Testcontainers to spin up isolated PostgreSQL and Redis instances.
 
 ## 📚 API Documentation
+
+Interactive API documentation is available via Swagger UI:
+
+**Swagger UI:** https://smart-task-management-system-production.up.railway.app/swagger-ui/index.html
 
 ### Authentication Endpoints
 
