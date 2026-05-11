@@ -34,3 +34,6 @@ spring:
             model: gemini-2.5-flash
 server:
   port: 8082
+security:
+  jwt:
+    secret: ${JWT_SECRET}
