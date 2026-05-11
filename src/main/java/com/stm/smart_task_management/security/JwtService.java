@@ -4,6 +4,7 @@ import com.stm.smart_task_management.user.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +16,12 @@ import java.util.Date;
 public class JwtService {
     @Value("${jwt.secret}")
     private String SECRET;
-    private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
+    private Key key;
+
+    @PostConstruct
+    public void init() {
+        this.key = Keys.hmacShaKeyFor(SECRET.getBytes());
+    }
 
     public String generateToken(User user){
         return Jwts.builder()
