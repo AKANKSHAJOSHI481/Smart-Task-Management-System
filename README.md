@@ -1,5 +1,7 @@
 # Smart Task Management System
 
+> **Live API:** https://smart-task-management-system-production.up.railway.app
+
 A sophisticated, AI-powered task management platform built with Spring Boot, designed to revolutionize productivity through intelligent prioritization, multi-tenancy, and seamless user experiences. This project demonstrates advanced software engineering practices, integrating cutting-edge technologies to deliver a scalable, secure, and intelligent task management solution.
 
 ## 🚀 Features
@@ -14,6 +16,29 @@ A sophisticated, AI-powered task management platform built with Spring Boot, des
 - **Containerized Deployment**: Docker Compose setup for easy local development and deployment
 
 ## 🏗️ System Architecture
+
+```mermaid
+graph TD
+  UI[User / API Client]
+  API[Spring Boot REST API]
+  Auth[Spring Security + JWT]
+  AI[Google Gemini AI]
+  JPA[JPA / Hibernate]
+  DB[PostgreSQL + Flyway]
+  Cache[Redis Cache / Session Store]
+  Tenant[Schema Multi-Tenancy]
+
+  UI --> API
+  API --> Auth
+  API --> AI
+  API --> JPA
+  JPA --> DB
+  JPA --> Tenant
+  API --> Cache
+  Auth --> DB
+  Cache --> API
+  Tenant --> DB
+```
 
 The application follows a layered architecture with clear separation of concerns:
 
@@ -104,6 +129,12 @@ Test the health endpoint:
 ```bash
 curl http://localhost:8082/actuator/health
 ```
+
+## 🌐 Live API
+
+The application is deployed and available at:
+
+https://smart-task-management-system-production.up.railway.app
 
 ## 🧪 Testing
 
