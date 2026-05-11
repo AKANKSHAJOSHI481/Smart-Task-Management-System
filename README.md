@@ -139,13 +139,16 @@ https://smart-task-management-system-production.up.railway.app
 ## 📸 Screenshots
 
 ### Swagger API Documentation
-![Swagger UI](https://via.placeholder.com/800x600?text=Swagger+Documentation+Screenshot)
+![Swagger UI]<img width="1280" height="792" alt="image" src="https://github.com/user-attachments/assets/a5f9b132-31a8-4ece-a68b-dcef5d2ea284" />
+
 
 ### Deployment Success
-![Deployment Success](https://via.placeholder.com/800x600?text=Deployment+Success+Screenshot)
+![Deployment Success]<img width="2850" height="1584" alt="image" src="https://github.com/user-attachments/assets/a5e11aef-4137-4414-a9ca-22142f009729" />
+
 
 ### CI/CD Build Success
-![CI Build Success](https://via.placeholder.com/800x600?text=CI+Build+Success+Screenshot)
+![CI Build Success]<img width="2834" height="1534" alt="image" src="https://github.com/user-attachments/assets/efe231f8-98c7-49e4-9372-0e2107e07f76" />
+
 
 ## 🧪 Testing
 
