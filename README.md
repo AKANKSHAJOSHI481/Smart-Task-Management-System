@@ -1,6 +1,12 @@
 # Smart Task Management System
+![Java](https://img.shields.io/badge/Java-17-orange)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.3-brightgreen)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
+![Railway](https://img.shields.io/badge/Deployed-Railway-purple)
 
-> **Live API:** https://smart-task-management-system-production.up.railway.app
+## Live Demo
+- API: https://smart-task-management-system-production.up.railway.app
+- Swagger: https://smart-task-management-system-production.up.railway.app/swagger-ui/index.html
 
 A sophisticated, AI-powered task management platform built with Spring Boot, designed to revolutionize productivity through intelligent prioritization, multi-tenancy, and seamless user experiences. This project demonstrates advanced software engineering practices, integrating cutting-edge technologies to deliver a scalable, secure, and intelligent task management solution.
 
